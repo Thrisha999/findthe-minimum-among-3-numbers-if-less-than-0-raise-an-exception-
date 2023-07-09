@@ -1,0 +1,21 @@
+create or replace procedure minimum(a int,b int,c int)
+is
+exp1 Exception;
+begin
+ if(a<0) or (b<0) or (c<0) then
+  raise exp1;
+ else if(a<b and a<c) then
+  dbms_output.put_line(a||'is minimum');
+ else if(b<a and b<c) then
+  dbms_output.put_line(b||'is minimum');
+ else if(c<b and c<a) then
+  dbms_output.put_line(c||'is minimum');
+ end if;
+ end if;
+ end if;
+ end if;
+Exception
+when exp1 then
+ dbms_output.put_line('NEGATIVE');
+end;
+/
